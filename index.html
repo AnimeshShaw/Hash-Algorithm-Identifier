@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Hash-algorithm-identifier by PsychoCoderHC</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Hash-algorithm-identifier</h1>
+        <h2>A python tool to identify different Hash Function Algorithms</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/PsychoCoderHC/Hash-Algorithm-Identifier/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/PsychoCoderHC/Hash-Algorithm-Identifier/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/PsychoCoderHC/Hash-Algorithm-Identifier" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a name="hash-algorithm-identifier" class="anchor" href="#hash-algorithm-identifier"><span class="octicon octicon-link"></span></a>Hash-Algorithm-Identifier</h1>
+
+<p>A python tool to identify different Hash Function Algorithms.</p>
+
+<p>This is my first python tool. Its a Hash Identifier which can be used to identify the login hash or cookie hash, password hash etc. This tool can detect the algorithm used to store the password in a database in hash form, of various forums like MyBB, phpBB3, Drupal, Joomla, wordpress etc.</p>
+
+<p>If you don't know what a Hash Function is then I recommend you to reading about it here :- <a href="http://en.wikipedia.org/wiki/Hash_function">http://en.wikipedia.org/wiki/Hash_function</a></p>
+
+<p>Anyone who have used Kali Linux or Backtrack Linix, they may know that you have a tool named hash-identifier and the link to the source of the tool is given below :</p>
+
+<p><a href="https://code.google.com/p/hash-identifier/">https://code.google.com/p/hash-identifier/</a></p>
+
+<p>But the code isn't very efficient and has a huge if-else-if and method construct which is repetitive and this makes the code redundant.</p>
+
+<p>Here's my version of HashIdentifier. (# of lines of code : 116)</p>
+
+<h3>
+<a name="screenshot" class="anchor" href="#screenshot"><span class="octicon octicon-link"></span></a>Screenshot</h3>
+
+<p><img src="http://i.imgur.com/zQvuSH2.png?1" alt="hash-identifier"></p>
+
+<p>The style nd design of the code has been kept same as the original hash-identifier in the Google-code project link given above.</p>
+
+<h3>
+<a name="how-to-use-" class="anchor" href="#how-to-use-"><span class="octicon octicon-link"></span></a>How to Use ?</h3>
+
+<p>To use this simply run (The app will start):-</p>
+
+<p><code>python HashIdentifier.py</code></p>
+
+<p>To make it executable as well run :-</p>
+
+<p><code>chmod +x HashIdentifier.py</code></p>
+
+<p>and then starting it by executing (One's the executable is made you can start it by typing the following text only):- </p>
+
+<p><code>./HashIdentifier.py</code></p>
+
+<p>If you don't understand the steps above then don't worry. In the github repository posted you will find a file named start.sh, just execute it and it will start running.</p>
+
+<p>To execute the start.sh, type the following in the terminal :- </p>
+
+<p><code>sh start.sh</code></p>
+
+<h3>
+<a name="about-the-code" class="anchor" href="#about-the-code"><span class="octicon octicon-link"></span></a>About the Code</h3>
+
+<p>As it is evident from the code that I have used regular expressions to identify the hashes. The hashes are being identified because they have certain characteristics and when matched properly they will give give the correct results. Using regular expressions to identify the hash makes the code neat and easy to understand only if you have a proper understanding of them. </p>
+
+<p>To understand the regex expressions used in the code, <a href="http://regex101.com/">VISIT THIS SITE</a> and paste the Regex Expression in its proper place and thereby you get the explanation.</p>
+
+<h4>
+<a name="specifications--" class="anchor" href="#specifications--"><span class="octicon octicon-link"></span></a>Specifications :-</h4>
+
+<p><strong>Encryption formats supported</strong> :- 78 Hashes (Listed below)</p>
+
+<ul>
+<li>Blowfish(Eggdrop)</li>
+<li>Blowfish(OpenBSD)</li>
+<li>DES(Unix)</li>
+<li>MD5(Unix)</li>
+<li>MD5(APR)</li>
+<li>MD5(MyBB)</li>
+<li>MD5(Joomla)</li>
+<li>MD5(Wordpress)</li>
+<li>MD5(phpBB3)</li>
+<li>MD5(Cisco PIX)</li>
+<li>MD5(osCommerce)</li>
+<li>MD5(Palshop)</li>
+<li>Lineage II C4</li>
+<li>RIPEMD-320</li>
+<li>RIPEMD-320(HMAC)</li>
+<li>SHA-1(Django)</li>
+<li>SHA-512(Drupal)</li>
+<li>SHA-256(Django)</li>
+<li>SHA-384(Django)</li>
+<li>SHA-256(Unix)</li>
+<li>SHA-512(Unix)</li>
+<li>SHA-384</li>
+<li>SHA-512</li>
+<li>SSHA-1</li>
+<li>MySQL 5.x</li>
+<li>MySQL3.x</li>
+<li>LM</li>
+<li>SAM(LM_Hash:NT_Hash)</li>
+<li>MSSQL(2000)</li>
+<li>MSSQL(2005)</li>
+<li>MSSQL(2008)</li>
+<li>HAVAL-160</li>
+<li>TIGER-160</li>
+<li>TIGER-160(HMAC)</li>
+<li>SHA-1</li>
+<li>RIPEMD-160</li>
+<li>RIPEMD-160(HMAC)</li>
+<li>SHA-1(MaNGOS)</li>
+<li>SHA-1(MaNGOS2)</li>
+<li>MySQL 4.x</li>
+<li>HAVAL-256</li>
+<li>SHA-256</li>
+<li>GOST R 34.11-94</li>
+<li>Snefru-256</li>
+<li>RIPEMD-256</li>
+<li>RipeMD-256(HMAC)</li>
+<li>HAVAL-192</li>
+<li>Tiger-192</li>
+<li>TIGER-192(HMAC)</li>
+<li>HAVAL-224</li>
+<li>SHA-224</li>
+<li>SHA-224(HMAC)</li>
+<li>Adler32</li>
+<li>CRC-32</li>
+<li>CRC-32B</li>
+<li>GHash-32-3</li>
+<li>GHash-32-5</li>
+<li>XOR-32</li>
+<li>CRC-16-CCITT</li>
+<li>CRC-16</li>
+<li>FCS-16</li>
+<li>Tiger-128</li>
+<li>Tiger-128(HMAC)</li>
+<li>NTLM</li>
+<li>Domain Cached Credentials(DCC)</li>
+<li>Domain Cached Credentials 2(DCC2)</li>
+<li>RAdmin v2.x</li>
+<li>MD4</li>
+<li>MD2</li>
+<li>MD5(HMAC(Wordpress))</li>
+<li>MD5(HMAC)</li>
+<li>MD5</li>
+<li>Snefru-128</li>
+<li>Snefru-128(HMAC)</li>
+<li>RIPEMD-128</li>
+<li>RIPEMD-128(HMAC)</li>
+<li>HAVAL-128</li>
+<li>HAVAL-128(HMAC)</li>
+</ul><h4>
+<a name="no-of-hashes-it-can-identify--78" class="anchor" href="#no-of-hashes-it-can-identify--78"><span class="octicon octicon-link"></span></a>No. of Hashes it can Identify : 78</h4>
+
+<p>This Tool will be updated soon to support several other Hashes. Suggestion and feedback are welcome.</p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>

@@ -41,7 +41,7 @@ HASHES = (
 		("MD5(osCommerce)",	"^[a-f0-9]{32}:[a-z0-9]{2}$"),
 		("MD5(Palshop)",	"^[a-f0-9]{51}$"),
 		("Lineage II C4",	"^0x[a-f0-9]{32}$"),
-		("RIPEMD-320",		"^[a-f0-9]{80}$"),
+		(("RIPEMD-320","RIPEMD-320(HMAC)"),		"^[a-f0-9]{80}$"),
 		("SHA-1(Django)",	"^sha1\$.{0,32}\$[a-f0-9]{40}$"),
 		("SHA-512(Drupal)",	"^\$S\$[a-z0-9\/\.]{52}$"),
 		("SHA-256(Django)",	"^sha256\$.{0,32}\$[a-f0-9]{64}$"),
@@ -56,13 +56,13 @@ HASHES = (
 		("SAM(LM_Hash:NT_Hash)","^[a-f-0-9]{32}:[a-f-0-9]{32}$"),
 		("MSSQL(2000)",		"^0x0100[a-f0-9]{0,8}?[a-f0-9]{80}$"),
 		(("MSSQL(2005)","MSSQL(2008)"),		"^0x0100[a-f0-9]{0,8}?[a-f0-9]{40}$"),				
-		(("HAVAL-160","TIGER-160","SHA-1","RIPMD-160","SHA-1(MaNGOS)","SHA-1(MaNGOS2)","MySQL 4.x"),	"^[a-f0-9]{40}$"),
-		(("HAVAL-256","SHA-256","GOST R 34.11-94","Snefru-256","RIPEMD-256"),		"^[a-f0-9]{64}$"),
-		(("HAVAL-192","Tiger-192"),		"^[a-f0-9]{48}$"),
-		(("HAVAL-224","SHA-224"),		"^[a-f0-9]{56}$"),
+		(("HAVAL-160","TIGER-160","TIGER-160(HMAC)","SHA-1","RIPEMD-160","RIPEMD-160(HMAC)","SHA-1(MaNGOS)","SHA-1(MaNGOS2)","MySQL 4.x"),	"^[a-f0-9]{40}$"),
+		(("HAVAL-256","SHA-256","GOST R 34.11-94","Snefru-256","RIPEMD-256","RipeMD-256(HMAC)"),		"^[a-f0-9]{64}$"),
+		(("HAVAL-192","Tiger-192","TIGER-192(HMAC)"),		"^[a-f0-9]{48}$"),
+		(("HAVAL-224","SHA-224","SHA-224(HMAC)"),		"^[a-f0-9]{56}$"),
 		(("Adler32","CRC-32","CRC-32B","GHash-32-3","GHash-32-5","XOR-32"),		"^[a-f0-9]{8}$"),
 		(("CRC-16-CCITT","CRC-16","FCS-16"),		"^[a-f0-9]{4}$"),
-		(("Tiger-128","Tiger-128(HMAC)","NTLM","Domain Cached Credentials(DCC)","Domain Cached Credentials 2(DCC2)","RAdmin v2.x","MD4","MD2","MD5","Snefru-128","Snefru-128(HMAC)","RIPEMD-128","HAVAL-128","HAVAL-128(HMAC)"),		"^[0-9a-f]{32}$"),	
+		(("Tiger-128","Tiger-128(HMAC)","NTLM","Domain Cached Credentials(DCC)","Domain Cached Credentials 2(DCC2)","RAdmin v2.x","MD4","MD2","MD5(HMAC(Wordpress))","MD5(HMAC)","MD5","Snefru-128","Snefru-128(HMAC)","RIPEMD-128","RIPEMD-128(HMAC)","HAVAL-128","HAVAL-128(HMAC)"),		"^[0-9a-f]{32}$"),	
 )
 
 # Function to identify all the hashes and return the results as list.

@@ -43,14 +43,14 @@
 
 <p>But the code isn't very efficient and has a huge if-else-if and method construct which is repetitive and this makes the code redundant.</p>
 
-<p>Here's my version of HashIdentifier. (# of lines of code : 116)</p>
+<p>Here's my version of HashIdentifier. (# of lines of code : 129)</p>
 
 <h3>
 <a name="screenshot" class="anchor" href="#screenshot"><span class="octicon octicon-link"></span></a>Screenshot</h3>
 
-<p><img src="http://i.imgur.com/zQvuSH2.png?1" alt="hash-identifier"></p>
+<p><img src="http://i.imgur.com/Ewre6ve.png?1" alt="hash-identifier"></p>
 
-<p>The style nd design of the code has been kept same as the original hash-identifier in the Google-code project link given above.</p>
+<p>The style and design of the code has been kept same as the original hash-identifier in the Google-code project link given above.</p>
 
 <h3>
 <a name="how-to-use-" class="anchor" href="#how-to-use-"><span class="octicon octicon-link"></span></a>How to Use ?</h3>
@@ -86,86 +86,114 @@
 <p><strong>Encryption formats supported</strong> :- 78 Hashes (Listed below)</p>
 
 <ul>
+<li>Adler32</li>
 <li>Blowfish(Eggdrop)</li>
 <li>Blowfish(OpenBSD)</li>
+<li>CRC-16</li>
+<li>CRC-16-CCITT</li>
+<li>CRC-32</li>
+<li>CRC-32B</li>
+<li>CRC-96(ZIP)</li>
+<li>DES(Oracle)</li>
 <li>DES(Unix)</li>
-<li>MD5(Unix)</li>
-<li>MD5(APR)</li>
-<li>MD5(MyBB)</li>
-<li>MD5(Joomla)</li>
-<li>MD5(Wordpress)</li>
-<li>MD5(phpBB3)</li>
-<li>MD5(Cisco PIX)</li>
-<li>MD5(osCommerce)</li>
-<li>MD5(Palshop)</li>
-<li>Lineage II C4</li>
-<li>RIPEMD-320</li>
-<li>RIPEMD-320(HMAC)</li>
-<li>SHA-1(Django)</li>
-<li>SHA-512(Drupal)</li>
-<li>SHA-256(Django)</li>
-<li>SHA-384(Django)</li>
-<li>SHA-256(Unix)</li>
-<li>SHA-512(Unix)</li>
-<li>SHA-384</li>
-<li>SHA-512</li>
-<li>SSHA-1</li>
-<li>MySQL 5.x</li>
-<li>MySQL3.x</li>
+<li>Domain Cached Credentials 2(DCC2)</li>
+<li>Domain Cached Credentials(DCC)</li>
+<li>FCS-16</li>
+<li>FNV-164</li>
+<li>FNV-32</li>
+<li>GHash-32-3</li>
+<li>GHash-32-5</li>
+<li>GOST R 34.11-94</li>
+<li>HAVAL-128</li>
+<li>HAVAL-128(HMAC)</li>
+<li>HAVAL-160</li>
+<li>HAVAL-192</li>
+<li>HAVAL-224</li>
+<li>HAVAL-256</li>
+<li>Joaat</li>
+<li>Keccak-224</li>
+<li>Keccak-256</li>
 <li>LM</li>
-<li>SAM(LM_Hash:NT_Hash)</li>
+<li>Lineage II C4</li>
+<li>Lotus Domino</li>
+<li>MD2</li>
+<li>MD4</li>
+<li>MD5</li>
+<li>MD5(APR)</li>
+<li>MD5(Cisco PIX)</li>
+<li>MD5(HMAC(Wordpress))</li>
+<li>MD5(HMAC)</li>
+<li>MD5(IP.Board)</li>
+<li>MD5(Joomla)</li>
+<li>MD5(MyBB)</li>
+<li>MD5(Palshop)</li>
+<li>MD5(Unix)</li>
+<li>MD5(Wordpress)</li>
+<li>MD5(osCommerce)</li>
+<li>MD5(phpBB3)</li>
 <li>MSSQL(2000)</li>
 <li>MSSQL(2005)</li>
 <li>MSSQL(2008)</li>
-<li>HAVAL-160</li>
-<li>TIGER-160</li>
-<li>TIGER-160(HMAC)</li>
-<li>SHA-1</li>
-<li>RIPEMD-160</li>
-<li>RIPEMD-160(HMAC)</li>
-<li>SHA-1(MaNGOS)</li>
-<li>SHA-1(MaNGOS2)</li>
+<li>MySQL 3.x</li>
 <li>MySQL 4.x</li>
-<li>HAVAL-256</li>
-<li>SHA-256</li>
-<li>GOST R 34.11-94</li>
-<li>Snefru-256</li>
-<li>RIPEMD-256</li>
-<li>RipeMD-256(HMAC)</li>
-<li>HAVAL-192</li>
-<li>Tiger-192</li>
-<li>TIGER-192(HMAC)</li>
-<li>HAVAL-224</li>
-<li>SHA-224</li>
-<li>SHA-224(HMAC)</li>
-<li>Adler32</li>
-<li>CRC-32</li>
-<li>CRC-32B</li>
-<li>GHash-32-3</li>
-<li>GHash-32-5</li>
-<li>XOR-32</li>
-<li>CRC-16-CCITT</li>
-<li>CRC-16</li>
-<li>FCS-16</li>
-<li>Tiger-128</li>
-<li>Tiger-128(HMAC)</li>
+<li>MySQL 5.x</li>
 <li>NTLM</li>
-<li>Domain Cached Credentials(DCC)</li>
-<li>Domain Cached Credentials 2(DCC2)</li>
 <li>RAdmin v2.x</li>
-<li>MD4</li>
-<li>MD2</li>
-<li>MD5(HMAC(Wordpress))</li>
-<li>MD5(HMAC)</li>
-<li>MD5</li>
-<li>Snefru-128</li>
-<li>Snefru-128(HMAC)</li>
 <li>RIPEMD-128</li>
 <li>RIPEMD-128(HMAC)</li>
-<li>HAVAL-128</li>
-<li>HAVAL-128(HMAC)</li>
+<li>RIPEMD-160</li>
+<li>RIPEMD-160(HMAC)</li>
+<li>RIPEMD-256</li>
+<li>RIPEMD-256(HMAC)</li>
+<li>RIPEMD-320</li>
+<li>RIPEMD-320(HMAC)</li>
+<li>SALSA-10</li>
+<li>SALSA-20</li>
+<li>SAM(LM_Hash:NT_Hash)</li>
+<li>SHA-1</li>
+<li>SHA-1(Django)</li>
+<li>SHA-1(MaNGOS)</li>
+<li>SHA-1(MaNGOS2)</li>
+<li>SHA-224</li>
+<li>SHA-224(HMAC)</li>
+<li>SHA-256</li>
+<li>SHA-256(Django)</li>
+<li>SHA-256(Unix)</li>
+<li>SHA-384</li>
+<li>SHA-384(Django)</li>
+<li>SHA-512</li>
+<li>SHA-512(Drupal)</li>
+<li>SHA-512(Unix)</li>
+<li>SHA3-384</li>
+<li>SHA3-512</li>
+<li>SSHA-1</li>
+<li>Skein-1024</li>
+<li>Skein-1024(384)</li>
+<li>Skein-1024(512)</li>
+<li>Skein-256</li>
+<li>Skein-256(128)</li>
+<li>Skein-256(160)</li>
+<li>Skein-256(224)</li>
+<li>Skein-512</li>
+<li>Skein-512(128)</li>
+<li>Skein-512(160)</li>
+<li>Skein-512(224)</li>
+<li>Skein-512(256)</li>
+<li>Skein-512(384)</li>
+<li>Snefru-128</li>
+<li>Snefru-128(HMAC)</li>
+<li>Snefru-256</li>
+<li>TIGER-160</li>
+<li>TIGER-160(HMAC)</li>
+<li>TIGER-192(HMAC)</li>
+<li>Tiger-128</li>
+<li>Tiger-128(HMAC)</li>
+<li>Tiger-192</li>
+<li>VNC</li>
+<li>Whirlpool</li>
+<li>XOR-32</li>
 </ul><h4>
-<a name="no-of-hashes-it-can-identify--78" class="anchor" href="#no-of-hashes-it-can-identify--78"><span class="octicon octicon-link"></span></a>No. of Hashes it can Identify : 78</h4>
+<a name="no-of-hashes-it-can-identify--106" class="anchor" href="#no-of-hashes-it-can-identify--106"><span class="octicon octicon-link"></span></a>No. of Hashes it can Identify : 106</h4>
 
 <p>This Tool will be updated soon to support several other Hashes. Suggestion and feedback are welcome.</p>
       </section>

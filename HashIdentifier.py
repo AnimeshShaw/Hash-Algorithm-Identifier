@@ -13,7 +13,7 @@ TITLE = '''
 |_|   |_|\_||_(___/|_| |_|  (_____)____|\____)_| |_|\___)_|_|  |_|\____)_|    
 _______________________________________________________________________________
 
-						   Version: 1.0 by Psycho_Coder
+						   Version: 2.0 by Psycho_Coder
 						   at HackCommunity.com.
 _______________________________________________________________________________
 	'''
@@ -23,7 +23,7 @@ USAGE = '''
 
 		In the terminal run : python HashIdentifier.py
 
-		Tested with python 2.7.
+		Tested with python 2.7.6
 	
 	'''
 
@@ -40,7 +40,11 @@ HASHES = (
 		("MD5(Cisco PIX)",	"^[a-z0-9\/\.]{16}$"),
 		("MD5(osCommerce)",	"^[a-f0-9]{32}:[a-z0-9]{2}$"),
 		("MD5(Palshop)",	"^[a-f0-9]{51}$"),
+		("MD5(IP.Board)",	"^[a-f0-9]{32}:.{5}$"),
+		("Lotus Domino",	"^\(?[a-z0-9\+\/]{20}\)?$"),
 		("Lineage II C4",	"^0x[a-f0-9]{32}$"),
+		("CRC-96(ZIP)",		"^[a-f0-9]{24}$"),
+		("Skein-1024",		"^[a-f0-9]{256}$"),
 		(("RIPEMD-320","RIPEMD-320(HMAC)"),		"^[a-f0-9]{80}$"),
 		("SHA-1(Django)",	"^sha1\$.{0,32}\$[a-f0-9]{40}$"),
 		("SHA-512(Drupal)",	"^\$S\$[a-z0-9\/\.]{52}$"),
@@ -48,21 +52,21 @@ HASHES = (
 		("SHA-384(Django)",	"^sha384\$.{0,32}\$[a-f0-9]{96}$"),
 		("SHA-256(Unix)",	"^\$5\$.{0,22}\$[a-z0-9\/\.]{43,69}$"),
 		("SHA-512(Unix)",	"^\$6\$.{0,22}\$[a-z0-9\/\.]{86}$"),
-		("SHA-384",		"^[a-f0-9]{96}$"),
-		("SHA-512","Whirlpool",	"^[a-f0-9]{128}$"),
+		(("SHA-384","SHA3-384","Skein-512(384)","Skein-1024(384)"),		"^[a-f0-9]{96}$"),
+		(("SHA-512","SHA3-512","Whirlpool","SALSA-10","SALSA-20","Skein-512","Skein-1024(512)"),	"^[a-f0-9]{128}$"),
 		("SSHA-1",		"^({SSHA})?[a-z0-9\+\/]{32,38}?(==)?$"),
 		("MySQL 5.x",		"^\*[a-f0-9]{40}$"),
-		(("MySQL3.x","LM"), 	"^[a-f0-9]{16}$"),
+		(("MySQL 3.x","DES(Oracle)","LM","VNC","FNV-164"), 	"^[a-f0-9]{16}$"),
 		("SAM(LM_Hash:NT_Hash)","^[a-f-0-9]{32}:[a-f-0-9]{32}$"),
 		("MSSQL(2000)",		"^0x0100[a-f0-9]{0,8}?[a-f0-9]{80}$"),
 		(("MSSQL(2005)","MSSQL(2008)"),		"^0x0100[a-f0-9]{0,8}?[a-f0-9]{40}$"),				
-		(("HAVAL-160","TIGER-160","TIGER-160(HMAC)","SHA-1","RIPEMD-160","RIPEMD-160(HMAC)","SHA-1(MaNGOS)","SHA-1(MaNGOS2)","MySQL 4.x"),	"^[a-f0-9]{40}$"),
-		(("HAVAL-256","SHA-256","GOST R 34.11-94","Snefru-256","RIPEMD-256","RipeMD-256(HMAC)"),		"^[a-f0-9]{64}$"),
+		(("MySQL 4.x","SHA-1","HAVAL-160","SHA-1(MaNGOS)","SHA-1(MaNGOS2)","TIGER-160","RIPEMD-160","RIPEMD-160(HMAC)","TIGER-160(HMAC)","Skein-256(160)","Skein-512(160)"),	"^[a-f0-9]{40}$"),
+		(("SHA-256","GOST R 34.11-94","RIPEMD-256","HAVAL-256","Snefru-256","RIPEMD-256(HMAC)","Keccak-256","Skein-256","Skein-512(256)"),		"^[a-f0-9]{64}$"),
 		(("HAVAL-192","Tiger-192","TIGER-192(HMAC)"),		"^[a-f0-9]{48}$"),
-		(("HAVAL-224","SHA-224","SHA-224(HMAC)"),		"^[a-f0-9]{56}$"),
-		(("Adler32","CRC-32","CRC-32B","GHash-32-3","GHash-32-5","XOR-32"),		"^[a-f0-9]{8}$"),
+		(("SHA-224","SHA-224(HMAC)","HAVAL-224","Keccak-224", "Skein-256(224)", "Skein-512(224)"),		"^[a-f0-9]{56}$"),
+		(("Adler32","FNV-32","Joaat","CRC-32","CRC-32B","GHash-32-3","GHash-32-5","XOR-32"),		"^[a-f0-9]{8}$"),
 		(("CRC-16-CCITT","CRC-16","FCS-16"),		"^[a-f0-9]{4}$"),
-		(("Tiger-128","Tiger-128(HMAC)","NTLM","Domain Cached Credentials(DCC)","Domain Cached Credentials 2(DCC2)","RAdmin v2.x","MD4","MD2","MD5(HMAC(Wordpress))","MD5(HMAC)","MD5","Snefru-128","Snefru-128(HMAC)","RIPEMD-128","RIPEMD-128(HMAC)","HAVAL-128","HAVAL-128(HMAC)"),		"^[0-9a-f]{32}$"),	
+		(("MD5(HMAC(Wordpress))","MD5(HMAC)","MD5","RIPEMD-128","RIPEMD-128(HMAC)","Tiger-128","Tiger-128(HMAC)","RAdmin v2.x","NTLM","Domain Cached Credentials(DCC)","Domain Cached Credentials 2(DCC2)","MD4","MD2","Snefru-128","Snefru-128(HMAC)","HAVAL-128","HAVAL-128(HMAC)","Skein-256(128)", "Skein-512(128)"),		"^[0-9a-f]{32}$"),	
 )
 
 # Function to identify all the hashes and return the results as list.
@@ -77,40 +81,49 @@ def identifyHashes(inputHash):
 	    		res += [items[0]] if ( type(items[0]) is str ) else items[0]	
     	return res
 	
-print TITLE
-print USAGE
+def startProcess():
 
-# Run infinite loop to ask for entering a hash everytime a hash if found.
-while(1):
-	print ("_" * 80)
-	print "\n"
+	# Run infinite loop to ask for entering a hash everytime a hash if found.
+	while(1):
+		print ("_" * 80)
+		print "\n"
 	
-	# Take the Hash as Input from the User.
-	inputHash = raw_input("Enter the Hash : ");
+		# Take the Hash as Input from the User.
+		inputHash = raw_input("Enter the Hash : ");
 	
-	if (len(inputHash) < 1):	
-		print ("\nPlease enter the hash. No input hash found.")		
-	else:	
-		# trim the hash entered and remove the unwanted spaces
-		inputHash = inputHash.strip()
+		if (len(inputHash) < 1):	
+			print ("\nPlease enter the hash. No input hash found.")		
+		else:	
+			# trim the hash entered and remove the unwanted spaces
+			inputHash = inputHash.strip()
 				
-		# Do the operation of Identifying the hashes.
-		results = identifyHashes(inputHash)
+			# Do the operation of Identifying the hashes.
+			results = identifyHashes(inputHash)
 
-		# If the length of the list returned by the hash identifying method is zero 
-		# that means no hashes algorithms have been found 
-		if (len(results) == 0):
-			print ("\n\nNot a Hash or Hash Unknown")	
-		elif (len(results) > 2):
+			# If the length of the list returned by the hash identifying method is zero 
+			# that means no hashes algorithms have been found 
+			if (len(results) == 0):
+				print ("\n\nNot a Hash or Hash Unknown")	
+			elif (len(results) > 2):
 			
-			# Show the results with most and less probable hash algorithms
-			print ("\nMost Probable Hash Algorithms found:\n")
-			print "[+] " + results[0]
-			print "[+] " + results[1]
-			print ("\nOther less Probable Hash Algorithms found:\n")
-			for item in range(int(len(results))-2):
-				print "[+] " + results[item+2]
-		else:
-			print ("\nMost Probable Hash Algorithms found:\n")
-			for item in range(int(len(results))):
-				print "[+] " + results[item]
+				# Show the results with most and less probable hash algorithms
+				print ("\nMost Probable Hash Algorithms found:\n")
+				print "[+] " + results[0]
+				print "[+] " + results[1]
+				print ("\nOther Possible Hash Algorithms found:\n")
+				for item in range(int(len(results))-2):
+					print "[+] " + results[item+2]
+			else:
+				print ("\nMost Probable Hash Algorithms found:\n")
+				for item in range(int(len(results))):
+					print "[+] " + results[item]
+
+def main():
+
+	#Print the TITLE and USAGE and then start the main loop.
+	print TITLE
+	print USAGE
+	startProcess()
+		
+if __name__ == "__main__":
+	main()

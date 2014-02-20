@@ -2,7 +2,7 @@
 #encoding: utf-8
 #@author: Psycho_Coder <https://psychocoder.github.io/>                            
 
-import re
+import re,sys
 
 TITLE = '''
  _     _            _        _____    _                  _  ___ _             
@@ -14,7 +14,7 @@ TITLE = '''
 _______________________________________________________________________________
 
 						   Version: 2.0 by Psycho_Coder
-						   Supports 106 Hashes.
+						   at HackCommunity.com.
 _______________________________________________________________________________
 	'''
 
@@ -23,7 +23,7 @@ USAGE = '''
 
 		In the terminal run : python HashIdentifier.py
 
-		Tested with python 2.7.6
+		2.7.6 <= Python Versions Support >= 3.0
 	
 	'''
 
@@ -77,19 +77,26 @@ def identifyHashes(inputHash):
 	
 	# Loop through all the hashes in the HASHES tuple and find all the possible hashes.
 	for items in HASHES:
-        	if (re.match(items[1],inputHash,re.IGNORECASE)):
-	    		res += [items[0]] if ( type(items[0]) is str ) else items[0]	
-    	return res
+		if (re.match(items[1],inputHash,re.IGNORECASE)):
+			res += [items[0]] if (type(items[0]) is str) else items[0]	
+	return res
+
+#function Get input from the user maintaining the python compatibility with earlier and newer versions.
+def getInput(prompt):
+	if sys.hexversion > 0x03000000:
+		return input(prompt)
+	else:
+		return raw_input(prompt)
 	
 def startProcess():
 
 	# Run infinite loop to ask for entering a hash everytime a hash if found.
 	while(1):
 		print ("_" * 80)
-		print "\n"
+		print ('\n')
 	
 		# Take the Hash as Input from the User.
-		inputHash = raw_input("Enter the Hash : ");
+		inputHash = getInput("Enter the Hash : ");
 	
 		if (len(inputHash) < 1):	
 			print ("\nPlease enter the hash. No input hash found.")		
@@ -108,21 +115,21 @@ def startProcess():
 			
 				# Show the results with most and less probable hash algorithms
 				print ("\nMost Probable Hash Algorithms found:\n")
-				print "[+] " + results[0]
-				print "[+] " + results[1]
+				print ("[+] " + results[0])
+				print ("[+] " + results[1])
 				print ("\nOther Possible Hash Algorithms found:\n")
 				for item in range(int(len(results))-2):
-					print "[+] " + results[item+2]
+					print ("[+] " + results[item+2])
 			else:
 				print ("\nMost Probable Hash Algorithms found:\n")
 				for item in range(int(len(results))):
-					print "[+] " + results[item]
+					print ("[+] " + results[item])
 
 def main():
 
 	#Print the TITLE and USAGE and then start the main loop.
-	print TITLE
-	print USAGE
+	print (TITLE)
+	print (USAGE)
 	startProcess()
 		
 if __name__ == "__main__":

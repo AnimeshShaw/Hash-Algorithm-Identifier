@@ -3,6 +3,8 @@
 **Version 2.1**
 * Added support for python lower and new versions.
 * Support for python versions <= 2.7 and >= 3.0
+* start.cmd script added for executing in windows environment.
+* Windows execulatbles created
 
 **Version 2.0**
 * Supports 106 hashes.

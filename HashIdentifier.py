@@ -13,18 +13,15 @@ TITLE = '''
 |_|   |_|\_||_(___/|_| |_|  (_____)____|\____)_| |_|\___)_|_|  |_|\____)_|    
 _______________________________________________________________________________
 
-						   Version: 2.1 by Psycho_Coder
-						   at HackCommunity.com.
+						   Version: 2.2 by Psycho_Coder
 _______________________________________________________________________________
 	'''
 
-USAGE = '''
-		Usage: 
+USAGE = '''	Usage: 
 
 		In the terminal run : python HashIdentifier.py
 
-		2.7.6 <= Python Versions Support >= 3.0
-	
+		2.7.6 <= Python Versions Support >= 3.0	
 	'''
 
 HASHES = (
@@ -130,7 +127,13 @@ def main():
 	#Print the TITLE and USAGE and then start the main loop.
 	print (TITLE)
 	print (USAGE)
-	startProcess()
+	try:
+		startProcess()
+	except KeyboardInterrupt:
+		print("Shutdown requested...exiting")
+	except Exception:
+		traceback.print_exc(file=sys.stdout)
+	sys.exit(0)
 		
 if __name__ == "__main__":
 	main()

@@ -1,5 +1,11 @@
 ### Hash Algorithm Identifier Version Changelog
 
+**Version 3.2**
+* Added 38 New Hashes.
+* Bug fixes for some hashes due to wrong Regex.
+* Added Support for Hex and Base64 hashes.
+* Tools tested on Linux and Windows and successfully runs.
+
 **Version 2.2**
 * Added exception handling for system exception and keyboard interruption.
 

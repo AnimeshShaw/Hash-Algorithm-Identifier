@@ -1,5 +1,8 @@
 ### Hash Algorithm Identifier Version Changelog
 
+**Version 2.2**
+* Added exception handling for system exception and keyboard interruption.
+
 **Version 2.1**
 * Added support for python lower and new versions.
 * Support for python versions <= 2.7 and >= 3.0

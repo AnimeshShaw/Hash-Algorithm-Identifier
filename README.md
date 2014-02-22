@@ -1,7 +1,7 @@
 Hash-Algorithm-Identifier
 =========================
 
-A python tool to identify different Hash Function Algorithms. Supports 106 Hash Algorithms.
+A python tool to identify different Hash Function Algorithms. Supports 150 Hash Algorithms.
 
 Read Wiki 
 ==============

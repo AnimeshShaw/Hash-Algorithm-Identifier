@@ -13,7 +13,7 @@ TITLE = '''
 |_|   |_|\_||_(___/|_| |_|  (_____)____|\____)_| |_|\___)_|_|  |_|\____)_|    
 _______________________________________________________________________________
 
-						   Version: 3.2 by Psycho_Coder
+						   Version: 3.3 by Psycho_Coder
 _______________________________________________________________________________
 	'''
 
@@ -39,10 +39,11 @@ HASHES = (
 		("MD5(Wordpress)", 	"^\$P\$[a-zA-Z0-9\/\.]{31}$"),
 		("MD5(phpBB3)", 	"^\$H\$[a-zA-Z0-9\/\.]{31}$"),
 		("MD5(Cisco PIX)", 	"^[a-zA-Z0-9\/\.]{16}$"),
-		("MD5(osCommerce)", 	"^[a-fA-F0-9]{32}:[a-zA-Z0-9]{2}$"),
+		(("MD5(osCommerce)","xt:Commerce"), 	"^[a-fA-F0-9]{32}:[a-zA-Z0-9]{2}$"),
 		("MD5(Palshop)", 	"^[a-fA-F0-9]{51}$"),
 		("MD5(IP.Board)", 	"^[a-fA-F0-9]{32}:.{5}$"),
 		("MD5(Chap)",		"^[a-fA-F0-9]{32}:[0-9]{32}:[a-fA-F0-9]{2}$"),
+		("Juniper Netscreen/SSG (ScreenOS)",	"^[a-zA-Z0-9]{30}:[a-zA-Z0-9]{4,}$"),
 		("Fortigate (FortiOS)",	"^[a-fA-F0-9]{47}$"),
 		("Minecraft(Authme)",	"^\$sha\$[a-zA-Z0-9]{0,16}\$[a-fA-F0-9]{64}$"),
 		("Lotus Domino", 	"^\(?[a-zA-Z0-9\+\/]{20}\)?$"),
@@ -67,6 +68,8 @@ HASHES = (
 		(("SHA-384", "SHA3-384", "Skein-512(384)", "Skein-1024(384)"), 	"^[a-fA-F0-9]{96}$"),
 		(("SHA-512","SHA-512(HMAC)","SHA3-512","Whirlpool","SALSA-10","SALSA-20","Keccak-512","Skein-512","Skein-1024(512)"), 	"^[a-fA-F0-9]{128}$"),
 		("SSHA-1", 		"^({SSHA})?[a-zA-Z0-9\+\/]{32,38}?(==)?$"),
+		(("SSHA-1(Base64)","Netscape LDAP SSHA","NSLDAPS"),	"^\{SSHA\}[a-zA-Z0-9]{32,38}?(==)?$"),
+		("Oracle 11g",	"^S:[A-Z0-9]{60}$"),
 		("MySQL 5.x", 		"^\*[a-f0-9]{40}$"),
 		(("MySQL 3.x", "DES(Oracle)", "LM", "VNC", "FNV-164"), 		"^[a-fA-F0-9]{16}$"),
 		("SAM(LM_Hash:NT_Hash)", 	"^[a-fA-F0-9]{32}:[a-fA-F0-9]{32}$"),
@@ -90,7 +93,7 @@ def identifyHashes(inputHash):
 	
 	# Loop through all the hashes in the HASHES tuple and find all the possible hashes.
 	for items in HASHES:
-		if (re.match(items[1], inputHash, re.IGNORECASE)):
+		if (re.match(items[1], inputHash)):
 			res += [items[0]] if (type(items[0]) is str) else items[0]	
 	return res
 
@@ -138,11 +141,21 @@ def startProcess():
 				for item in range(int(len(results))):
 					print ("[+] " + results[item])
 
+def printAllHashSupported():
+	ress = []
+	for item in HASHES:
+		ress += [item[0]] if ( type(item[0]) is str ) else item[0]
+	ress.sort()
+	for i in range(int(len(ress))):
+		print("* " + ress[i])
+	print(len(ress))
+
 def main():
 
 	# Print the TITLE and USAGE and then start the main loop.
 	print (TITLE)
 	print (USAGE)
+	printAllHashSupported()
 	try:
 		startProcess()
 	except KeyboardInterrupt:

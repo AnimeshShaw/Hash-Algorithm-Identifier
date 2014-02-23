@@ -1,7 +1,7 @@
 ### Hash Algorithm Identifier Version Changelog
 
 **Version 3.3**
-* Added support for 6 New Hashes.
+* Added support for 10 New Hashes.
 * Fixed the upper and lower case characters on hashes of a few algorithms.
 * Added the function to print all the hashes.
 

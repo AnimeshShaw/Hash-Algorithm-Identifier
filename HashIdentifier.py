@@ -175,6 +175,7 @@ def main():
         startProcess()
     except KeyboardInterrupt:
         print("Shutdown requested...exiting")
+    except Exception:
         traceback.print_exc(file=stdout)
     exit(0)
 

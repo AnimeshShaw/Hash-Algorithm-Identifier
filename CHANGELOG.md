@@ -1,5 +1,9 @@
 ### Hash Algorithm Identifier Version Changelog
 
+**Version 3.3.1**
+* Code reworked.
+* Proper formatting of code and imports fixed.
+
 **Version 3.3**
 * Added support for 10 New Hashes.
 * Fixed the upper and lower case characters on hashes of a few algorithms.

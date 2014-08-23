@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # encoding: utf-8
-# @author: Psycho_Coder <https://psychocoder.github.io/>                            
+# Author: Psycho_Coder <https://psychocoder.github.io/>
 
 from re import match
 from sys import stdout, hexversion, exit
@@ -15,7 +15,7 @@ TITLE = ("\n"
          "|_|   |_|\\_||_(___/|_| |_|  (_____)____|\\____)_| |_|\\___)_|_|  |_|\\____)_|    \n"
          "_______________________________________________________________________________\n"
          "\n"
-         "\t\t\t\t\t\t   Version: 3.3 by Psycho_Coder\n"
+         "\t\t\t\t\t\t   Version: 3.3.1 by Psycho_Coder\n"
          "_______________________________________________________________________________\n"
          "\t"
 )
@@ -175,7 +175,6 @@ def main():
         startProcess()
     except KeyboardInterrupt:
         print("Shutdown requested...exiting")
-    except Exception:
         traceback.print_exc(file=stdout)
     exit(0)
 

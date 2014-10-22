@@ -3,7 +3,7 @@
 # Author: Psycho_Coder <https://psychocoder.github.io/>
 
 from re import match
-from sys import stdout, hexversion, exit
+from sys import stdout, hexversion, exit, argv
 import traceback
 
 TITLE = ("\n"
@@ -132,12 +132,19 @@ def getInput(prompt):
 
 def startProcess():
     # Run infinite loop to ask for entering a hash everytime a hash if found.
+    firstrun = True
     while True:
         print("_" * 80)
         print('\n')
 
-        # Take the Hash as Input from the User.
-        input_hash = getInput("Enter the Hash : ");
+        # Take the Hash as Input from the User, Or from Run Args
+        input_hash = ""
+        if firstrun and len(argv) == 2:
+            input_hash = argv[1]
+            firstrun = False
+        else:
+            input_hash = getInput("Enter the Hash : ");
+
 
         if len(input_hash) < 1:
             print("\nPlease enter the hash. No input hash found.")

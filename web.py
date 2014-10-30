@@ -22,6 +22,8 @@ class MainHandler(tornado.web.RequestHandler):
     def initialize(self):
         self.set_header("Server", "HashIdentifier")
         self.set_header("X-Content-Type-Options", "nosniff")
+        self.set_header("Access-Control-Allow-Origin", "*")
+        self.set_header("Access-Control-Allow-Methods", "GET, POST")
 
     @coroutine
     def identify_hashes(self, hsh):

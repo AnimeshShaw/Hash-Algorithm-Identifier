@@ -1,8 +1,48 @@
 #!/usr/bin/env python
 '''
-Yay, web services
-
+@about: Web service wrapper for hash identifcation.
 @author: moloch
+
+Usage: ./web.py or see --help for more options
+
+--------------------------------------------------------------------------
+JavaScript Simple Example
+--------------------------------------------------------------------------
+var hash = "3da541559918a808c2402bba5012f6c60b27661c";
+
+cors_request = new XMLHttpRequest();
+cors_request.onreadystatechange = function() {
+    if (cors_request.readyState == 4) {
+        console.log(cors_request.responseText);
+    }
+}
+cors_request.open("GET", "http://hashid.badwith.computer/" + hash);
+cors_request.send();
+
+
+--------------------------------------------------------------------------
+Python Simple Example
+--------------------------------------------------------------------------
+import requests
+
+hsh = "3da541559918a808c2402bba5012f6c60b27661c"
+resp = requests.get("http://hashid.badwith.computer/%s" % hsh)
+print resp.text
+
+
+--------------------------------------------------------------------------
+Python Multiple Hash Identification Example
+--------------------------------------------------------------------------
+import json
+import requests
+
+hashes = {'hashes': [
+                     "3da541559918a808c2402bba5012f6c60b27661c",
+                     "912ec803b2ce49e4a541068d495ab570"
+                    ]}
+
+resp = requests.post("http://hashid.badwith.computer/", data=json.dumps(hashes))
+print resp.text
 '''
 
 import json

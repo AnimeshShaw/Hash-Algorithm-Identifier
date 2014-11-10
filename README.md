@@ -11,3 +11,5 @@ Read Wiki
 
 
 #### [Read CHANGELOG] (https://github.com/PsychoCoderHC/Hash-Algorithm-Identifier/blob/master/CHANGELOG.md) to know about the changes made.
+
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=Psycho_Coder&url=https://github.com/AnimeshShaw/Hash-Algorithm-Identifier&title=Hash-Algorithm-Identifier&language=&tags=github&category=software) 

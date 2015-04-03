@@ -6,7 +6,8 @@
 * Startup shell files Reworked.
 * Added a Web service wrapper for hash identification. [Thanks to moloch]
 * Added requirements.txt
-* Removed setup_win.py 
+* Removed setup_win.py
+* Some code fixes and added commands to exit in interactive mode.
 
 **Version 3.3.1**
 * Code reworked.

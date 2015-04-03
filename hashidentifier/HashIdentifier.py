@@ -6,27 +6,37 @@ from re import match
 from sys import stdout, hexversion, exit, argv
 import traceback
 
-TITLE = ("\n"
-         " _     _            _        _____    _                  _  ___ _             \n"
-         "| |   | |          | |      (_____)  | |            _   (_)/ __|_)            \n"
-         "| |__ | | ____  ___| | _       _   _ | | ____ ____ | |_  _| |__ _  ____  ____ \n"
-         "|  __)| |/ _  |/___) || \\     | | / || |/ _  )  _ \\|  _)| |  __) |/ _  )/ ___)\n"
-         "| |   | ( ( | |___ | | | |   _| |( (_| ( (/ /| | | | |__| | |  | ( (/ /| |    \n"
-         "|_|   |_|\\_||_(___/|_| |_|  (_____)____|\\____)_| |_|\\___)_|_|  |_|\\____)_|    \n"
-         "_______________________________________________________________________________\n"
-         "\n"
-         "\t\t\t\t\t\t   Version: 3.3.1 by Psycho_Coder\n"
-         "_______________________________________________________________________________\n"
-         "\t"
-)
+TITLE = """
+  _    _           _       _____    _            _   _  __ _
+ | |  | |         | |     |_   _|  | |          | | (_)/ _(_)
+ | |__| | __ _ ___| |__     | |  __| | ___ _ __ | |_ _| |_ _  ___ _ __
+ |  __  |/ _` / __| '_ \    | | / _` |/ _ \ '_ \| __| |  _| |/ _ \ '__|
+ | |  | | (_| \__ \ | | |  _| || (_| |  __/ | | | |_| | | | |  __/ |
+ |_|  |_|\__,_|___/_| |_| |_____\__,_|\___|_| |_|\__|_|_| |_|\___|_|
+ ----------------------------------------------------------------------
+                                            Version: 3.4
+                                            Coded By: Psycho_Coder
+ ----------------------------------------------------------------------
+"""
 
-USAGE = ("\tUsage: \n"
-         "\n"
-         "\t\tIn the terminal run : python HashIdentifier.py\n"
-         "\n"
-         "\t\t2.7.6 <= Python Versions Support >= 3.0\t\n"
-         "\t"
-)
+USAGE = """
+Move to the folder (hashidentifier) containing the file HashIdentifier.py and then
+run in terminal
+
+    python HashIdentifier.py <Your hash>
+
+    or
+
+    python HashIdentifier.py
+
+The above opens the interactive mode where you can repeatedly give hashes. To exit
+from the interactive mode simple write any one of the following commands :-
+                        "quit, or q, or exit, or end"
+
+For more details please refer to the README
+
+                2.7.x <= Python Compatibility <= 3.x.x
+"""
 
 HASHES = (
     ("Blowfish(Eggdrop)", "^\+[a-zA-Z0-9\/\.]{12}$"),
@@ -107,58 +117,65 @@ HASHES = (
 )
 
 
-def identify_hashes(inputHash):
+def identify_hashes(input_hash):
     """
     Function to identify all the hashes and return the results as list.
+    :rtype : list
+    :param input_hash:
     """
-
-    # List to store the names of the identified Hash Algorithms
     res = []
-
-    # Loop through all the hashes in the HASHES tuple and find all the possible hashes.
     for items in HASHES:
-        if match(items[1], inputHash):
-            res += [items[0]] if (type(items[0]) is str) else items[0]
+        if match(items[1], input_hash):
+            res += [items[0]] if isinstance(items[0], str) else items[0]
     return res
 
 
-# function Get input from the user maintaining the python compatibility with earlier and newer versions.
-def getInput(prompt):
+def get_input(prompt):
+    """
+    Function Get input from the user maintaining the python compatibility with earlier and newer versions.
+    :param prompt:
+    :rtype : str
+    :return: Returns the Hash string received from user.
+    """
     if hexversion > 0x03000000:
         return input(prompt)
     else:
         return raw_input(prompt)
 
 
-def startProcess():
-    # Run infinite loop to ask for entering a hash everytime a hash if found.
+def start_process():
+    """
+    Run infinite loop to ask for entering a hash every time a hash if found.
+    """
     firstrun = True
     while True:
         print("_" * 80)
         print('\n')
 
         # Take the Hash as Input from the User, Or from Run Args
-        input_hash = ""
         if firstrun and len(argv) == 2:
             input_hash = argv[1]
             firstrun = False
         else:
-            input_hash = getInput("Enter the Hash : ");
+            input_hash = get_input("Enter the Hash : ")
+            # Trim the hash entered and remove the unwanted spaces
+            input_hash = input_hash.strip()
 
+            # Exit from loop.
+            if input_hash in ("quit", "exit", "q", "end"):
+                print("Bye Bye Thank you for using this tool.")
+                break
 
         if len(input_hash) < 1:
             print("\nPlease enter the hash. No input hash found.")
         else:
-            # trim the hash entered and remove the unwanted spaces
-            input_hash = input_hash.strip()
-
             # Do the operation of Identifying the hashes.
             results = identify_hashes(input_hash)
 
             # If the length of the list returned by the hash identifying method is zero
             # that means no hashes algorithms have been found
             if len(results) == 0:
-                print("\n\nNot a Hash or Hash Unknown")
+                print("\n\n:( Sorry we are unable to identify the type of hash.")
             elif len(results) > 2:
 
                 # Show the results with most and less probable hash algorithms
@@ -175,17 +192,19 @@ def startProcess():
 
 
 def main():
-    # Print the TITLE and USAGE and then start the main loop.
+    """
+    Print the TITLE and USAGE and then start the main loop.
+    """
     print(TITLE)
     print(USAGE)
     try:
-        startProcess()
+        start_process()
     except KeyboardInterrupt:
         print("Shutdown requested...exiting")
-    except Exception:
+    except EOFError:
+        print("\nSystem Exited during user input.")
         traceback.print_exc(file=stdout)
-    exit(0)
 
 
 if __name__ == "__main__":
-    main()
+    exit(main())

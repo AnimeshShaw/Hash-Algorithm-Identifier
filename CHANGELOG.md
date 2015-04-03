@@ -1,5 +1,13 @@
 ### Hash Algorithm Identifier Version Changelog
 
+**Version 3.4**
+* Code Indentation fixed.
+* Added Docstrings.
+* Startup shell files Reworked.
+* Added a Web service wrapper for hash identification. [Thanks to moloch]
+* Added requirements.txt
+* Removed setup_win.py 
+
 **Version 3.3.1**
 * Code reworked.
 * Proper formatting of code and imports fixed.

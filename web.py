@@ -112,4 +112,5 @@ define("port",
 if __name__ == "__main__":
     tornado.options.parse_command_line()
     application.listen(options.port)
+    print("Starting HAI Server on localhost on port number 8888 ...")
     tornado.ioloop.IOLoop.instance().start()

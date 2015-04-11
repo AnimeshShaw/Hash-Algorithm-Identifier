@@ -4,9 +4,11 @@ Hash-Algorithm-Identifier
 
 [![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=Psycho_Coder&url=https://github.com/AnimeshShaw/Hash-Algorithm-Identifier&title=Hash-Algorithm-Identifier&language=&tags=github&category=software) 
 
-
 A python tool to identify different Hash Function Algorithms. Supports 160+ Hash Algorithms.
 
+### Screenshot
+
+![hash-identifier](http://i.imgur.com/yuiiCFV.png)
 
 Read Wiki 
 =========

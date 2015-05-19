@@ -4,11 +4,11 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
-    <title>Hash-algorithm-identifier by PsychoCoderHC</title>
+    <title>Hash-algorithm-identifier by AnimeshShaw</title>
   </head>
 
   <body>
@@ -19,9 +19,9 @@
         <h2>A python tool to identify different Hash Function Algorithms</h2>
 
         <section id="downloads">
-          <a href="https://github.com/PsychoCoderHC/Hash-Algorithm-Identifier/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/PsychoCoderHC/Hash-Algorithm-Identifier/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/PsychoCoderHC/Hash-Algorithm-Identifier" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+          <a href="https://github.com/AnimeshShaw/Hash-Algorithm-Identifier/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/AnimeshShaw/Hash-Algorithm-Identifier/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/AnimeshShaw/Hash-Algorithm-Identifier" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
         </section>
       </div>
     </header>
@@ -29,9 +29,14 @@
     <div class="container">
       <section id="main_content">
         <h1>
-<a name="hash-algorithm-identifier" class="anchor" href="#hash-algorithm-identifier"><span class="octicon octicon-link"></span></a>Hash-Algorithm-Identifier</h1>
+<a id="hash-algorithm-identifier" class="anchor" href="#hash-algorithm-identifier" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hash-Algorithm-Identifier</h1>
 
 <p>A python tool to identify different Hash Function Algorithms.</p>
+
+<h3>
+<a id="project-site" class="anchor" href="#project-site" aria-hidden="true"><span class="octicon octicon-link"></span></a>Project site</h3>
+
+<p><a href="http://psychocoderhc.github.io/Hash-Algorithm-Identifier">http://psychocoderhc.github.io/Hash-Algorithm-Identifier</a></p>
 
 <p>This is my first python tool. Its a Hash Identifier which can be used to identify the login hash or cookie hash, password hash etc. This tool can detect the algorithm used to store the password in a database in hash form, of various forums like MyBB, phpBB3, Drupal, Joomla, wordpress etc.</p>
 
@@ -43,17 +48,17 @@
 
 <p>But the code isn't very efficient and has a huge if-else-if and method construct which is repetitive and this makes the code redundant.</p>
 
-<p>Here's my version of HashIdentifier. (# of lines of code : 129)</p>
+<p>Here's my version of HashIdentifier. (# of lines of code : 156)</p>
 
 <h3>
-<a name="screenshot" class="anchor" href="#screenshot"><span class="octicon octicon-link"></span></a>Screenshot</h3>
+<a id="screenshot" class="anchor" href="#screenshot" aria-hidden="true"><span class="octicon octicon-link"></span></a>Screenshot</h3>
 
-<p><img src="http://i.imgur.com/Ewre6ve.png?1" alt="hash-identifier"></p>
+<p><img src="http://i.imgur.com/yuiiCFV.png" alt="hash-identifier"></p>
 
 <p>The style and design of the code has been kept same as the original hash-identifier in the Google-code project link given above.</p>
 
 <h3>
-<a name="how-to-use-" class="anchor" href="#how-to-use-"><span class="octicon octicon-link"></span></a>How to Use ?</h3>
+<a id="how-to-use-" class="anchor" href="#how-to-use-" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to Use ?</h3>
 
 <p>To use this simply run (The app will start):-</p>
 
@@ -74,33 +79,45 @@
 <p><code>sh start.sh</code></p>
 
 <h3>
-<a name="about-the-code" class="anchor" href="#about-the-code"><span class="octicon octicon-link"></span></a>About the Code</h3>
+<a id="about-the-code" class="anchor" href="#about-the-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>About the Code</h3>
 
 <p>As it is evident from the code that I have used regular expressions to identify the hashes. The hashes are being identified because they have certain characteristics and when matched properly they will give give the correct results. Using regular expressions to identify the hash makes the code neat and easy to understand only if you have a proper understanding of them. </p>
 
 <p>To understand the regex expressions used in the code, <a href="http://regex101.com/">VISIT THIS SITE</a> and paste the Regex Expression in its proper place and thereby you get the explanation.</p>
 
 <h4>
-<a name="specifications--" class="anchor" href="#specifications--"><span class="octicon octicon-link"></span></a>Specifications :-</h4>
+<a id="specifications--" class="anchor" href="#specifications--" aria-hidden="true"><span class="octicon octicon-link"></span></a>Specifications :-</h4>
 
-<p><strong>Encryption formats supported</strong> :- 106 Hashes (Listed below)</p>
+<p><strong>Encryption formats supported</strong> :- 160+ Hashes (Listed below)</p>
 
 <ul>
 <li>Adler32</li>
+<li>Apache MD5</li>
+<li>Blowfish crypt</li>
 <li>Blowfish(Eggdrop)</li>
 <li>Blowfish(OpenBSD)</li>
 <li>CRC-16</li>
 <li>CRC-16-CCITT</li>
 <li>CRC-32</li>
 <li>CRC-32B</li>
+<li>CRC-64</li>
 <li>CRC-96(ZIP)</li>
+<li>Cisco IOS SHA256</li>
+<li>Cisco-IOS MD5</li>
+<li>DES crypt</li>
+<li>DES hash(Traditional)</li>
 <li>DES(Oracle)</li>
 <li>DES(Unix)</li>
 <li>Domain Cached Credentials 2(DCC2)</li>
 <li>Domain Cached Credentials(DCC)</li>
+<li>ELF-32</li>
 <li>FCS-16</li>
+<li>FCS-32</li>
 <li>FNV-164</li>
 <li>FNV-32</li>
+<li>Fletcher-32</li>
+<li>Fortigate (FortiOS)</li>
+<li>FreeBSD MD5</li>
 <li>GHash-32-3</li>
 <li>GHash-32-5</li>
 <li>GOST R 34.11-94</li>
@@ -113,13 +130,19 @@
 <li>Joaat</li>
 <li>Keccak-224</li>
 <li>Keccak-256</li>
+<li>Keccak-512</li>
 <li>LM</li>
 <li>Lineage II C4</li>
 <li>Lotus Domino</li>
 <li>MD2</li>
+<li>MD2(HMAC)</li>
 <li>MD4</li>
+<li>MD4(HMAC)</li>
 <li>MD5</li>
+<li>MD5 apache crypt</li>
+<li>MD5 crypt</li>
 <li>MD5(APR)</li>
+<li>MD5(Chap)</li>
 <li>MD5(Cisco PIX)</li>
 <li>MD5(HMAC(Wordpress))</li>
 <li>MD5(HMAC)</li>
@@ -129,15 +152,21 @@
 <li>MD5(Palshop)</li>
 <li>MD5(Unix)</li>
 <li>MD5(Wordpress)</li>
+<li>MD5(ZipMonster)</li>
 <li>MD5(osCommerce)</li>
 <li>MD5(phpBB3)</li>
+<li>MSCASH2</li>
 <li>MSSQL(2000)</li>
 <li>MSSQL(2005)</li>
 <li>MSSQL(2008)</li>
+<li>Minecraft(Authme)</li>
 <li>MySQL 3.x</li>
 <li>MySQL 4.x</li>
 <li>MySQL 5.x</li>
+<li>NSLDAP</li>
+<li>NT crypt</li>
 <li>NTLM</li>
+<li>Netscape LDAP SHA</li>
 <li>RAdmin v2.x</li>
 <li>RIPEMD-128</li>
 <li>RIPEMD-128(HMAC)</li>
@@ -151,18 +180,28 @@
 <li>SALSA-20</li>
 <li>SAM(LM_Hash:NT_Hash)</li>
 <li>SHA-1</li>
+<li>SHA-1 crypt</li>
 <li>SHA-1(Django)</li>
+<li>SHA-1(Hex)</li>
+<li>SHA-1(LDAP) Base64</li>
+<li>SHA-1(LDAP) Base64 + salt</li>
 <li>SHA-1(MaNGOS)</li>
 <li>SHA-1(MaNGOS2)</li>
+<li>SHA-1(Oracle)</li>
 <li>SHA-224</li>
 <li>SHA-224(HMAC)</li>
 <li>SHA-256</li>
+<li>SHA-256 crypt</li>
 <li>SHA-256(Django)</li>
+<li>SHA-256(HMAC)</li>
 <li>SHA-256(Unix)</li>
+<li>SHA-3(Keccak)</li>
 <li>SHA-384</li>
 <li>SHA-384(Django)</li>
 <li>SHA-512</li>
+<li>SHA-512 crypt</li>
 <li>SHA-512(Drupal)</li>
+<li>SHA-512(HMAC)</li>
 <li>SHA-512(Unix)</li>
 <li>SHA3-384</li>
 <li>SHA3-512</li>
@@ -183,6 +222,7 @@
 <li>Snefru-128</li>
 <li>Snefru-128(HMAC)</li>
 <li>Snefru-256</li>
+<li>Snefru-256(HMAC)</li>
 <li>TIGER-160</li>
 <li>TIGER-160(HMAC)</li>
 <li>TIGER-192(HMAC)</li>
@@ -192,13 +232,27 @@
 <li>VNC</li>
 <li>Whirlpool</li>
 <li>XOR-32</li>
-</ul><h4>
-<a name="no-of-hashes-it-can-identify--106" class="anchor" href="#no-of-hashes-it-can-identify--106"><span class="octicon octicon-link"></span></a>No. of Hashes it can Identify : 106</h4>
+<li>substr(md5($pass),0,16)</li>
+<li>substr(md5($pass),16,16)</li>
+</ul>
+
+<h4>
+<a id="no-of-hashes-it-can-identify--160" class="anchor" href="#no-of-hashes-it-can-identify--160" aria-hidden="true"><span class="octicon octicon-link"></span></a>No. of Hashes it can Identify : 160+</h4>
 
 <p>This Tool will be updated soon to support several other Hashes. Suggestion and feedback are welcome.</p>
       </section>
     </div>
 
-    
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-55776877-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
   </body>
 </html>
